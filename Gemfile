@@ -10,7 +10,7 @@ source "https://rubygems.org"
 gem "jekyll", "~> 4.4.1"
 # Using minimal theme for this.
 gem "minimal-mistakes-jekyll"
-gem "jekyll-remote-theme"
+#gem "jekyll-remote-theme"
 
 group :jekyll_plugins do
   gem "jekyll-paginate"
@@ -20,6 +20,8 @@ group :jekyll_plugins do
   gem "jemoji"
   gem "jekyll-include-cache"
   gem "jekyll-algolia"
+  gem "faraday-retry"  # Added for Faraday v2.0+ compatibility
+  gem "ostruct"        # Optional, to silence the warning
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
