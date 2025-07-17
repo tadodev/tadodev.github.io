@@ -1,18 +1,11 @@
 ---
-layout: page
+layout: archive
 title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+# Hi! I'm Thanh Tu Do
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+I started my career as a structural engineer. I was very good at the details of building design, automation and optimizaton. Through the years, I became curious about how to create software and why some products was hard to use while others were intuitive. This led me to my second career in visual coding and full-stack software developer. I taught myself .Net, Angular, HTML, CSS and JavaScript and soon began designing and building my own structural engineering application focus on working with FEM software and automation
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+I'm passionate about building simple yet powerfull products for the desktop and the web. I am a life long learner who loves to teach, which has led to my role as a Application Developer at Thornton Tomasetti
