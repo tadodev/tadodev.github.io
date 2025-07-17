@@ -23,7 +23,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'  # Matches your workflow's Ruby version
+          ruby-version: '3.2'  # Matches your workflow's Ruby version
           bundler-cache: true  # Caches gems
       - name: Install Dependencies
         run: |
