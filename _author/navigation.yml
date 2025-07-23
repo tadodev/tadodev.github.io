@@ -1,0 +1,10 @@
+# main links
+main:
+  - title: "Home"
+    url: /
+  - title: "Sample Posts"
+    url: /year-archive/
+  - title: "Portfolio"
+    url: /collection-archive/
+  - title: "About"
+    url: /about/
