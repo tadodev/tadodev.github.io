@@ -50,8 +50,8 @@ I'm currently focused on:
 **Programming Languages:**
 - Python (Django, Flask, Data Analysis)
 - JavaScript (React, Node.js, Vue.js)
-- HTML/CSS (Responsive Design, SASS)
-- SQL (PostgreSQL, MySQL)
+- C# and .NET (ASP.Net, WPF)
+- SQL (PostgreSQL, SQL Server)
 
 **Tools & Technologies:**
 - Git/GitHub for version control
@@ -82,7 +82,7 @@ I believe that the principles that make great engineering also make great softwa
 
 When I'm not coding or calculating structural loads, you can find me:
 - 📚 Reading about new technologies and engineering innovations
-- 🌱 Work and badminton date with my amazing senior assosiate HRBP girlfriend
+- 🌱 Work and badminton date with my amazing senior associate HRBP girlfriend
 - ✍️ Writing technical articles and tutorials
 - 🎯 Exploring the intersection of engineering and technology
 
@@ -91,10 +91,9 @@ When I'm not coding or calculating structural loads, you can find me:
 
 I'm always interested in connecting with fellow engineers, developers, and anyone passionate about technology. Whether you're looking to collaborate on a project, discuss career transitions, or just chat about the latest tech trends, feel free to reach out!
 
-- **Email**: [thanhtu.do@example.com](mailto:thanhtu.do@example.com)
+- **Email**: [dothahtupt@gmail.com](mailto:dothanhtupt@gmail.com)
 - **GitHub**: [github.com/tadodev](https://github.com/tadodev)
-- **LinkedIn**: [linkedin.com/in/tadodev](https://linkedin.com/in/tadodev)
-- **Twitter**: [@tadodev](https://twitter.com/tadodev)
+- **LinkedIn**: [https://www.linkedin.com/in/do-thanh-tu-852a51163/](https://www.linkedin.com/in/do-thanh-tu-852a51163/)
 
 ---
 

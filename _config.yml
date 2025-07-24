@@ -11,7 +11,7 @@
 # Site settings
 locale                   : "en-US"
 title: "Thanh Tu Do"
-email: thanhtu.do@example.com  # Update with your actual email
+email: dothanhtupt@gmail.com  # Update with your actual email
 description: &description "A Structural Engineer with a passion for software development and open source. Bridging the gap between engineering and technology."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tadodev.github.io" # Fixed URL
@@ -21,42 +21,34 @@ teaser: "/assets/images/teaser.jpg" # Default teaser image
 author:
   name             : "Thanh Tu Do"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Structural Engineer turned Software Developer. Building bridges between engineering and technology."
+  bio              : "Structural Engineer and Software Developer."
   location         : "Vietnam"
-  email            : "thanhtu.do@example.com"
+  email            : "dothanhtupt@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:thanhtu.do@example.com"
+      url: "mailto:dothanhtupt@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://tadodev.github.io"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/tadodev"  # Update with your handle
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/tadodev"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://linkedin.com/in/tadodev"  # Update with your profile
+      url: "https://www.linkedin.com/in/do-thanh-tu-852a51163/"  # Update with your profile
 
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/tadodev"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/tadodev"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://linkedin.com/in/tadodev"
+      url: "https://www.linkedin.com/in/do-thanh-tu-852a51163/"
 
 # Social Sharing
-twitter:
-  username               : "tadodev"  # Your Twitter handle
 facebook:
   username               : "tadodev"  # Your Facebook username
   app_id                 :
