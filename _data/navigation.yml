@@ -1,0 +1,27 @@
+# Main navigation links
+main:
+  - title: "Home"
+    url: /
+  - title: "About"
+    url: /about/
+  - title: "Portfolio"
+    url: /portfolio/
+  - title: "Blog"
+    url: /posts/
+  - title: "Categories"
+    url: /categories/
+  - title: "Tags"
+    url: /tags/
+  - title: "Contact"
+    url: /contact/
+
+# Documentation links (if needed for project docs)
+docs:
+  - title: Getting Started
+    children:
+      - title: "Quick-Start Guide"
+        url: /docs/quick-start-guide/
+      - title: "Installation"
+        url: /docs/installation/
+      - title: "Configuration"
+        url: /docs/configuration/
