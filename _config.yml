@@ -7,64 +7,90 @@
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 
+# Site settings
 locale                   : "en-US"
 title: "Thanh Tu Do"
-email: your-email@example.com
-description: &description "A Structural engineer with a passion for software development and open source."
+email: thanhtu.do@example.com  # Update with your actual email
+description: &description "A Structural Engineer with a passion for software development and open source. Bridging the gap between engineering and technology."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "tadodev.github,io" # the base hostname & protocol for your site, e.g. http://example.com
-teaser: 
+url: "https://tadodev.github.io" # Fixed URL
+teaser: "/assets/images/teaser.jpg" # Default teaser image
+
+# Site Author
+author:
+  name             : "Thanh Tu Do"
+  avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Structural Engineer turned Software Developer. Building bridges between engineering and technology."
+  location         : "Vietnam"
+  email            : "thanhtu.do@example.com"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:thanhtu.do@example.com"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://tadodev.github.io"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/tadodev"  # Update with your handle
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/tadodev"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/tadodev"  # Update with your profile
+
+# Site Footer
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/tadodev"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/tadodev"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/tadodev"
 
 # Social Sharing
 twitter:
-  username               : &twitter "mmistakes" #Todo
+  username               : "tadodev"  # Your Twitter handle
 facebook:
-  username               : &facebook "michaelrose" #Todo
+  username               : "tadodev"  # Your Facebook username
   app_id                 :
   publisher              :
 og_image                 : "/assets/images/site-logo.png" # Open Graph/Twitter default site image
 
-enable_copy_code_button  : true
+# Search
+search                   : true
+search_full_content      : true
+search_provider          : lunr # lunr (default), algolia
 
-search                   : true # true, false (default)
-search_full_content      : true # true, false (default)
-search_provider          : algolia # lunr (default), algolia
-algolia:
-  application_id         : QB6HVGBSBA # YOUR_APPLICATION_ID
-  index_name             : minimal_mistakes # YOUR_INDEX_NAME
-  search_only_api_key    : 9d5014e5bbc77372547bce778dfa5663 # YOUR_SEARCH_ONLY_API_KEY
-  powered_by             : true # true (default), false
+# Analytics
+analytics:
+  provider               : false # false (default), "google", "google-universal", "google-gtag", "custom"
+  google:
+    tracking_id          :
+    anonymize_ip         : # true, false (default)
 
 # Build settings
-remote_theme             : "mmistakes/minimal-mistakes@master"
-
-minimal_mistakes_skin    : "default"
+remote_theme             : "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
+  style: compressed
 
 # Outputting
 permalink: /:categories/:title/
-# paginate: 5 # amount of posts to show
-# paginate_path: /page:num/
-timezone: America/New_York # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: Asia/Ho_Chi_Minh # Updated timezone for Vietnam
 
-
-# Plugins (previously gems:)
+# Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -82,12 +108,19 @@ whitelist:
   - jemoji
   - jekyll-include-cache
 
-  
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
 # Collections
 collections:
   portfolio:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:name/
 
 # Defaults
 defaults:
@@ -102,6 +135,7 @@ defaults:
       comments: true
       share: true
       related: true
+      toc: true
       toc_sticky: true
 
   # _pages
@@ -120,10 +154,8 @@ defaults:
       layout: single
       author_profile: true
       share: true
-      comments: true
+      toc: true
       toc_sticky: true
-
-
 
 # Reading Files
 include:
@@ -153,13 +185,13 @@ exclude:
   - Rakefile
   - README
   - tmp
+  - /docs # ignore Minimal Mistakes /docs
+  - /test # ignore Minimal Mistakes /test
 keep_files:
   - .git
   - .svn
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-
 
 # Conversion
 markdown: kramdown
@@ -167,7 +199,6 @@ highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
-
 
 # Markdown Processing
 kramdown:
@@ -179,5 +210,3 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
-
-  
