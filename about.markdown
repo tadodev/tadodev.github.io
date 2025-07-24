@@ -29,9 +29,9 @@ With a background in structural engineering, I've spent years:
 ### Transition to Software Development 💻
 
 My interest in technology grew as I began using software tools for engineering calculations and project management. This curiosity led me to:
-- Learn programming languages like Python, JavaScript, and more
+- Learn programming languages like Python, JavaScript, and C#
 - Build automation tools to streamline engineering workflows
-- Contribute to open-source projects
+- Build internal tools to automate design analysis process
 - Develop web applications and data analysis tools
 - Explore modern development frameworks and best practices
 
@@ -43,7 +43,6 @@ I'm currently focused on:
 - **Full-stack web development** using modern frameworks
 - **Data analysis and visualization** for engineering applications
 - **Automation tools** that bridge engineering and software domains
-- **Open source contributions** to projects I'm passionate about
 - **Technical writing** about engineering and software development
 
 ### Skills & Technologies 🛠️
@@ -62,11 +61,12 @@ I'm currently focused on:
 - Data visualization (D3.js, Chart.js, Matplotlib)
 
 **Engineering Expertise:**
-- Structural analysis and design
-- Building codes and standards
+- Structural analysis and design (Etabs, SAP2000)
+- Building codes and standards (ACI, TCVN, Eurocode)
+- Modeling (Rhino-grasshopper)
 - Project management
 - Technical documentation
-- Quality assurance and testing
+
 
 ## My Philosophy
 
@@ -82,10 +82,10 @@ I believe that the principles that make great engineering also make great softwa
 
 When I'm not coding or calculating structural loads, you can find me:
 - 📚 Reading about new technologies and engineering innovations
-- 🌱 Contributing to open-source projects
+- 🌱 Work and badminton date with my amazing senior assosiate HRBP girlfriend
 - ✍️ Writing technical articles and tutorials
 - 🎯 Exploring the intersection of engineering and technology
-- 🌍 Connecting with other professionals making career transitions
+
 
 ## Let's Connect
 
