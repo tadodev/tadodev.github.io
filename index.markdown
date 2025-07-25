@@ -37,30 +37,29 @@ feature_row_about:
 ---
 
 {% include feature_row id="intro" type="center" %}
-
 {% include feature_row id="feature_row_about" %}
 
-## Featured Articles
+---
 
-Insights and experiences from my journey bridging engineering and software development.
+## 📰 Featured Articles
 
-<div class="featured-posts">
-{% assign featured_posts = site.posts | where: "featured", true | limit: 3 %}
-{% for post in featured_posts %}
-  <div class="featured-post">
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-    <p class="archive__item-excerpt">{{ post.excerpt | markdownify | strip_html | truncatewords: 20 }}</p>
-    <p class="page__meta">
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-      {% if post.tags %}
-        • {% for tag in post.tags limit:2 %}
-          <span class="page__taxonomy-item">{{ tag }}</span>{% unless forloop.last %}, {% endunless %}
-        {% endfor %}
-      {% endif %}
-    </p>
-  </div>
-{% endfor %}
-</div>
+<section class="card-grid">
+  {% assign featured_posts = site.posts | where: "featured", true | limit: 3 %}
+  {% for post in featured_posts %}
+    <article class="card">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p>{{ post.excerpt | markdownify | strip_html | truncatewords: 25 }}</p>
+      <p class="card-meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+        {% if post.tags %}
+          • {% for tag in post.tags limit:2 %}
+            <span class="tag">{{ tag }}</span>{% unless forloop.last %}, {% endunless %}
+          {% endfor %}
+        {% endif %}
+      </p>
+    </article>
+  {% endfor %}
+</section>
 
 <div class="text-center">
   <a href="/posts/" class="btn btn--primary">View All Articles</a>
@@ -68,48 +67,38 @@ Insights and experiences from my journey bridging engineering and software devel
 
 ---
 
-## Featured Projects
+## 🚀 Featured Projects
 
-A showcase of projects that demonstrate the intersection of engineering and technology.
-
-<div class="featured-projects">
-{% assign featured_projects = site.portfolio | where: "featured", true | limit: 3 %}
-{% for project in featured_projects %}
-  <div class="project-card">
-    {% if project.header.teaser %}
-      <div class="project-image">
+<section class="card-grid">
+  {% assign featured_projects = site.portfolio | where: "featured", true | limit: 3 %}
+  {% for project in featured_projects %}
+    <article class="card">
+      {% if project.header.teaser %}
         <img src="{{ project.header.teaser | relative_url }}" alt="{{ project.title }}">
-      </div>
-    {% endif %}
-    <div class="project-content">
+      {% endif %}
       <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
       <p>{{ project.excerpt | markdownify | strip_html | truncatewords: 25 }}</p>
-      
+
       {% if project.tech_stack %}
         <div class="tech-stack">
           {% for tech in project.tech_stack limit:4 %}
-            <span class="tech-tag">{{ tech }}</span>
+            <span class="tag">{{ tech }}</span>
           {% endfor %}
         </div>
       {% endif %}
-      
+
       <div class="project-links">
         <a href="{{ project.url | relative_url }}" class="btn btn--info btn--small">Learn More</a>
         {% if project.github_url %}
-          <a href="{{ project.github_url }}" class="btn btn--inverse btn--small">
-            <i class="fab fa-github"></i> GitHub
-          </a>
+          <a href="{{ project.github_url }}" class="btn btn--inverse btn--small"><i class="fab fa-github"></i> GitHub</a>
         {% endif %}
         {% if project.demo_url %}
-          <a href="{{ project.demo_url }}" class="btn btn--primary btn--small">
-            <i class="fas fa-external-link-alt"></i> Demo
-          </a>
+          <a href="{{ project.demo_url }}" class="btn btn--primary btn--small"><i class="fas fa-external-link-alt"></i> Demo</a>
         {% endif %}
       </div>
-    </div>
-  </div>
-{% endfor %}
-</div>
+    </article>
+  {% endfor %}
+</section>
 
 <div class="text-center">
   <a href="/portfolio/" class="btn btn--primary">View All Projects</a>
@@ -117,16 +106,12 @@ A showcase of projects that demonstrate the intersection of engineering and tech
 
 ---
 
-## Latest Blog Posts
-
-Recent thoughts and tutorials from my development journey.
+## 📝 Latest Blog Posts
 
 {% for post in site.posts limit:5 %}
   <div class="list__item">
     <article class="archive__item">
-      <h2 class="archive__item-title">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </h2>
+      <h2 class="archive__item-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
       <p class="archive__item-excerpt">{{ post.excerpt | markdownify | strip_html | truncatewords: 30 }}</p>
       <p class="page__meta">
         <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
@@ -136,71 +121,55 @@ Recent thoughts and tutorials from my development journey.
   </div>
 {% endfor %}
 
+---
+
 <style>
-.featured-posts {
+.card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin: 2rem 0;
 }
 
-.featured-post {
+.card {
+  border: 1px solid #e1e5e9;
+  border-radius: 8px;
   padding: 1.5rem;
-  border: 1px solid #e1e5e9;
-  border-radius: 8px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.featured-post:hover {
+.card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.featured-projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.project-card {
-  border: 1px solid #e1e5e9;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.project-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.project-image img {
+.card img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
-}
-
-.project-content {
-  padding: 1.5rem;
-}
-
-.tech-stack {
-  margin: 1rem 0;
-}
-
-.tech-tag {
-  display: inline-block;
-  background: #f1f3f4;
-  color: #5f6368;
-  padding: 0.25rem 0.5rem;
+  margin-bottom: 1rem;
   border-radius: 4px;
+}
+
+.card h3 {
+  margin-top: 0.5rem;
+}
+
+.card-meta {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.tag {
+  display: inline-block;
+  background: #f2f2f2;
+  color: #444;
+  padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
-  margin: 0.125rem;
+  border-radius: 4px;
+  margin-right: 0.25rem;
 }
 
 .project-links {
@@ -208,13 +177,11 @@ Recent thoughts and tutorials from my development journey.
 }
 
 .project-links .btn {
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin: 0.25rem 0.5rem 0.25rem 0;
 }
 
 @media (max-width: 768px) {
-  .featured-posts,
-  .featured-projects {
+  .card-grid {
     grid-template-columns: 1fr;
   }
 }
