@@ -15,13 +15,26 @@ main:
   - title: "Contact"
     url: /contact/
 
-# Documentation links (if needed for project docs)
-docs:
-  - title: Getting Started
+
+# Portfolio navigation sidebar
+
+portfolio:
+  - title: "Engineering Tools"
     children:
-      - title: "Quick-Start Guide"
-        url: /docs/quick-start-guide/
-      - title: "Installation"
-        url: /docs/installation/
-      - title: "Configuration"
-        url: /docs/configuration/
+      - title: "ETABS Extension Suite"
+        url: /portfolio/etabs-extension/
+      - title: "SpEditor - Text Editor"
+        url: /portfolio/speditor/
+      
+  - title: "Web Applications"
+    children:
+      - title: "IFC Viewer"
+        url: /portfolio/ifcviewer/
+
+      
+  - title: "Automation & Scripts"
+    children:
+      - title: "Base Reaction Force Plot"
+        url: /portfolio/design-automation/
+
+

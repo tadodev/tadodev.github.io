@@ -1,0 +1,25 @@
+// Make overall layout wider
+.page__content,
+.page__footer,
+.page__sidebar {
+  max-width: 120rem; // Wider than default 80rem
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Adjust page grid layout for large screens
+@media (min-width: 80em) {
+  .page {
+    grid-template-columns: 1fr 6fr 1fr; // sidebar - content - toc
+    column-gap: 2rem;
+  }
+
+  .sidebar__left,
+  .sidebar__right {
+    max-width: 250px; // Tighter sidebars
+  }
+
+  .page__main {
+    max-width: 100%;
+  }
+}

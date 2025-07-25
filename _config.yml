@@ -12,7 +12,7 @@
 locale                   : "en-US"
 title: "Thanh Tu Do"
 email: dothanhtupt@gmail.com  # Update with your actual email
-description: &description "A Structural Engineer with a passion for software development and open source. Bridging the gap between engineering and technology."
+description: &description "A Structural Engineer with a passion for software development"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tadodev.github.io" # Fixed URL
 teaser: "/assets/images/teaser.jpg" # Default teaser image
@@ -144,10 +144,12 @@ defaults:
       type: portfolio
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       share: true
       toc: true
       toc_sticky: true
+      sidebar:
+        nav: "portfolio"
 
 # Reading Files
 include:
