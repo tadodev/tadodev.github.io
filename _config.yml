@@ -74,7 +74,8 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed
+  style: expanded
+  sourcemap: true
 
 # Outputting
 permalink: /:categories/:title/

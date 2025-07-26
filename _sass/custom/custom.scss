@@ -1,25 +1,452 @@
-// Make overall layout wider
-.page__content,
-.page__footer,
-.page__sidebar {
-  max-width: 120rem; // Wider than default 80rem
+// _sass/custom/custom.scss
+// Fixed wide layout for Minimal Mistakes theme
+
+// Override the default page width - Microsoft DevBlog style
+.page {
+  width: 100%;
+  max-width: 1600px !important;
   margin-left: auto;
   margin-right: auto;
+  background: #ffffff;
 }
 
-// Adjust page grid layout for large screens
+// Force wide layout on all pages
+.page__content,
+.page__sidebar,
+.page__sidebar--left,
+.page__sidebar--right {
+  max-width: none !important;
+}
+
+// Global styles
+body {
+  background-color: #f5f5f5;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+// Desktop layout with proper grid (80em = 1280px)
 @media (min-width: 80em) {
+  // Main page wrapper
   .page {
-    grid-template-columns: 1fr 6fr 1fr; // sidebar - content - toc
-    column-gap: 2rem;
+    display: grid !important;
+    grid-template-areas: 
+      "sidebar content toc"
+      "sidebar content toc";
+    grid-template-columns: 280px 1fr 280px;
+    grid-column-gap: 3rem;
+    align-items: start;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2rem;
   }
 
-  .sidebar__left,
+  // Left sidebar (author profile)
+  .sidebar.sticky {
+    grid-area: sidebar;
+    position: sticky !important;
+    top: 2rem;
+    width: 100% !important;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  // Main content area
+  .page__main {
+    grid-area: content;
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  // Content styling - Microsoft DevBlog style
+  .page__content {
+    max-width: 1200px !important;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    background: #ffffff;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 2rem;
+    
+    // Override any theme constraints
+    width: auto !important;
+    float: none !important;
+
+    // Portfolio pages
+    .layout--single &,
+    .portfolio__item & {
+      max-width: 1200px !important;
+      width: 100% !important;
+    }
+  }
+
+  // Right sidebar (TOC)
+  .page__right-sidebar {
+    grid-area: toc;
+    position: sticky !important;
+    top: 2rem;
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    height: fit-content;
+  }
+
+  // Ensure TOC container is visible
   .sidebar__right {
-    max-width: 250px; // Tighter sidebars
+    position: static !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    clear: none !important;
+    float: none !important;
+  }
+}
+
+// Enhanced TOC styling
+.toc {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  font-family: -apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
+  
+  .nav__title {
+    color: #495057 !important;
+    font-size: 0.875rem !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #dee2e6;
+  }
+
+  .toc__menu {
+    font-size: 0.8rem;
+    line-height: 1.5;
+
+    a {
+      color: #6c757d !important;
+      text-decoration: none !important;
+      display: block;
+      padding: 0.4rem 0.75rem;
+      border-left: 3px solid transparent;
+      margin-bottom: 0.2rem;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: #0066cc !important;
+        border-left-color: #0066cc;
+        background-color: rgba(0,102,204,0.08);
+      }
+
+      &.active {
+        color: #0066cc !important;
+        font-weight: 600;
+        border-left-color: #0066cc;
+        background-color: rgba(0,102,204,0.12);
+      }
+    }
+
+    ul {
+      margin: 0.5rem 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 0;
+      }
+
+      ul {
+        margin-left: 1rem;
+        
+        a {
+          font-size: 0.75rem;
+          color: #868e96 !important;
+          padding: 0.3rem 0.75rem;
+        }
+      }
+    }
+  }
+}
+
+// Content typography improvements - Microsoft DevBlog style
+.page__content {
+  // Better heading styles
+  h2 {
+    font-size: 1.75rem !important;
+    color: #000000 !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 1.25rem !important;
+    padding-bottom: 0;
+    border-bottom: none;
+    font-weight: 600;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h3 {
+    font-size: 1.5rem !important;
+    color: #000000 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    font-weight: 600;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h4 {
+    font-size: 1.25rem !important;
+    color: #000000 !important;
+    margin-top: 1.75rem !important;
+    margin-bottom: 0.75rem !important;
+    font-weight: 600;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  // Better paragraph spacing
+  p {
+    margin-bottom: 1.25rem !important;
+    line-height: 1.6 !important;
+    color: #222222;
+    font-size: 1rem;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  // Code block improvements - Microsoft DevBlog style
+  pre {
+    background: #1e1e1e !important;
+    border: none;
+    border-radius: 4px;
+    padding: 1rem !important;
+    margin: 1.5rem 0 !important;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-family: "Cascadia Code", Consolas, Monaco, "Andale Mono", monospace;
+  }
+
+  code {
+    background: #f3f3f3 !important;
+    color: #0066cc !important;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: "Cascadia Code", Consolas, Monaco, "Andale Mono", monospace;
+  }
+
+  pre code {
+    background: transparent !important;
+    color: inherit !important;
+    padding: 0;
+  }
+
+  // List improvements
+  ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+  }
+
+  // Table styling
+  table {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    th {
+      background: #f8f9fa;
+      font-weight: 600;
+      color: #495057;
+      border-bottom: 2px solid #dee2e6;
+    }
+
+    tr:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    tr:hover {
+      background: #e9ecef;
+    }
+  }
+
+  // Image improvements
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin: 2rem auto;
+    display: block;
+  }
+
+  // Blockquote styling
+  blockquote {
+    border-left: 4px solid #0066cc;
+    background: #f8f9fa;
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    
+    p {
+      margin-bottom: 0.5rem;
+      color: #6c757d;
+    }
+  }
+}
+
+// Tablet layout (between 64em and 80em)
+@media (min-width: 64em) and (max-width: 79.999em) {
+  .page {
+    display: grid !important;
+    grid-template-areas: 
+      "sidebar content"
+      "sidebar content";
+    grid-template-columns: 280px 1fr;
+    grid-column-gap: 2rem;
+    max-width: 1200px;
+  }
+
+  .sidebar.sticky {
+    grid-area: sidebar;
   }
 
   .page__main {
+    grid-area: content;
+  }
+
+  .page__right-sidebar {
+    display: none; // Hide TOC on tablet
+  }
+
+  .page__content {
+    max-width: 800px !important;
+    padding: 2rem 3rem;
+  }
+}
+
+// Mobile layout (below 64em)
+@media (max-width: 63.999em) {
+  .page {
+    display: block !important;
     max-width: 100%;
+    padding: 0;
+  }
+
+  .page__content {
+    max-width: none !important;
+    margin: 0;
+    padding: 1.5rem !important;
+    background: #ffffff !important;
+  }
+
+  .layout--home .page__content {
+    background: transparent !important;
+  }
+
+  .page__right-sidebar {
+    position: static !important;
+    margin-top: 2rem;
+    width: 100% !important;
+  }
+
+  .toc {
+    margin-bottom: 2rem;
+  }
+
+  .sidebar.sticky {
+    position: static !important;
+    width: 100% !important;
+    margin-bottom: 2rem;
+  }
+}
+
+// Page type specific overrides - Microsoft DevBlog style
+.page {
+  &.layout--single,
+  &.layout--archive,
+  &.layout--posts,
+  &.layout--categories,
+  &.layout--tags,
+  &.layout--portfolio,
+  &.layout--home {
+    .page__content {
+      max-width: none !important;
+      width: 100% !important;
+      background: #ffffff;
+      margin: 0 auto;
+      padding: 2rem 0;
+      
+      @media (min-width: 80em) {
+        padding: 3rem 0;
+      }
+    }
+  }
+  
+  // Special handling for home page
+  &.layout--home {
+    .page__content {
+      background: transparent;
+      padding: 2rem 0;
+    }
+  }
+}
+
+// Portfolio specific styles
+.layout--portfolio,
+.portfolio__item {
+  .page__content {
+    .archive__item {
+      margin-bottom: 3rem;
+      
+      &-title {
+        font-size: 1.75rem;
+        margin: 0 0 1rem;
+      }
+      
+      &-excerpt {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #444;
+      }
+      
+      &-teaser {
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+
+// Fix any margin/padding issues from the theme
+.page__main {
+  .archive {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    
+    @include breakpoint($large) {
+      float: none !important;
+      width: 100% !important;
+      padding-right: 0 !important;
+    }
   }
 }
