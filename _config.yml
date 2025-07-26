@@ -74,8 +74,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Sass/SCSS
 sass:
   sass_dir: _sass
-  style: expanded
-  sourcemap: true
+  style: compressed
 
 # Outputting
 permalink: /:categories/:title/
@@ -123,7 +122,7 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
       comments: true
       share: true
@@ -137,7 +136,7 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
+      author_profile: false
 
   # _portfolio
   - scope:
@@ -151,6 +150,13 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: "portfolio"
+        
+  # Homepage
+  - scope:
+      path: "index.markdown"
+    values:
+      layout: home
+      author_profile: true
 
 # Reading Files
 include:
