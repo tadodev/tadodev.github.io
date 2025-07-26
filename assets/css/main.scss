@@ -10,3 +10,169 @@ search: false
 
 // Custom styles
 @import "custom/custom"; // custom styles
+
+// _sass/minimal-mistakes/_layout.scss override
+// Add this to your main.scss after the minimal-mistakes import
+
+// Override the main page layout to use Microsoft DevBlog structure
+.page {
+  // Clear any existing constraints
+  clear: both;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: none;
+  
+  // Ensure proper flow
+  overflow: visible;
+  
+  // Remove any floats
+  float: none;
+  
+  &__inner-wrap {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: none;
+  }
+}
+
+// Override sidebar positioning
+.sidebar {
+  // Reset any existing positioning
+  clear: none;
+  float: none;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  
+  &.sticky {
+    // Use CSS Grid instead of float/position
+    position: sticky;
+    top: 2rem;
+  }
+}
+
+// Override main content area
+.page__main {
+  // Reset margins and padding
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: none;
+  
+  // Remove any floats
+  float: none;
+  clear: none;
+  
+  // Ensure it takes full width in grid
+  overflow: visible;
+}
+
+// Override content wrapper
+.page__content {
+  // Remove any width constraints from the theme
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  
+  // Remove floats
+  float: none !important;
+  clear: none !important;
+}
+
+// Hide right sidebar by default (we'll show TOC differently)
+.page__right-sidebar {
+  display: none;
+  
+  @media (min-width: 80em) {
+    // Only show on very large screens if needed
+    display: none;
+  }
+}
+
+// Ensure archive pages work properly
+.archive {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  float: none !important;
+  clear: none !important;
+}
+
+// Fix author profile in sidebar
+.author__avatar {
+  img {
+    max-width: 110px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+}
+
+.author__content {
+  .author__name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #212529;
+  }
+  
+  .author__bio {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+}
+
+// Responsive grid overrides
+@media (min-width: 80em) {
+  // Force the grid layout on desktop
+  .page {
+    display: grid !important;
+    grid-template-areas: "sidebar main" !important;
+    grid-template-columns: 280px 1fr !important;
+    grid-gap: 3rem !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 2rem !important;
+    
+    // Ensure children use grid areas
+    > .sidebar {
+      grid-area: sidebar !important;
+    }
+    
+    > .page__main {
+      grid-area: main !important;
+    }
+  }
+}
+
+@media (min-width: 64em) and (max-width: 79.999em) {
+  .page {
+    display: grid !important;
+    grid-template-areas: "sidebar main" !important;
+    grid-template-columns: 250px 1fr !important;
+    grid-gap: 2rem !important;
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+    padding: 2rem !important;
+  }
+}
+
+@media (max-width: 63.999em) {
+  .page {
+    display: block !important;
+    padding: 1rem !important;
+    
+    .sidebar {
+      position: static !important;
+      width: 100% !important;
+      margin-bottom: 2rem;
+    }
+  }
+}
